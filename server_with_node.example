@@ -1,0 +1,14 @@
+//backup for the index.js - this one is emptied
+import http from 'http';
+
+// console.log(1234);
+//vi kan se console log, uden at åbne webpage. vi har faktisk ikke webpage endnu
+
+//we opretter den nu
+http.createServer((request, response) => {
+    console.log('server is running at port 4000');
+    response.writeHead(200, {'Content-type':'text/html;charset=utf-8'}); //danske bogstaver
+    response.write('<h1>Hej verden</h1>');
+    response.write('<h2>Godt Nytår</h2>');
+    response.end();
+}).listen(4040);

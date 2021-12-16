@@ -1,0 +1,23 @@
+import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const app = express();
+const port = process.env.PORT || 4020
+//hvis den finder env.PORT så bruger den, ELLERS så 4020
+
+app.get('/',(req, res) => {
+    res.send('Velkommen til forsiden...');
+})
+
+app.get('/about',(req, res) => {
+    res.send('Om os....');
+})
+
+app.get('/products',(req, res) => {
+    res.send('Produktliste');
+})
+
+app.listen(port, () => {
+    console.log(`server is running on port ${port}...`);
+})
